@@ -1,0 +1,8 @@
+#/usr/bash
+
+#PACKAGE=`cat PACKAGE.txt`
+PACKAGE=`./pp`
+
+echo ' => stopping the app...'
+echo adb shell am force-stop ${PACKAGE}
+adb shell am force-stop ${PACKAGE}

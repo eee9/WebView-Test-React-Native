@@ -1,0 +1,22 @@
+#/usr/bash
+
+#PACKAGE=`cat PACKAGE.txt`
+PACKAGE=`./pp`
+
+echo ' FULL DEBUG BUILD, emulator, x86'
+echo PACKAGE: \"$PACKAGE\"
+
+cd ../android
+
+echo ' => build debug apks...'
+./gradlew assembleDebug
+echo 'gradlew DONE.'  
+
+echo ' => uninstall the app if it exists...'
+adb uninstall ${PACKAGE}
+
+echo ' => install debug apk on emulator of x86...'
+adb -e install ./app/build/outputs/apk/debug/app-x86-debug.apk
+
+echo ' => run the app on emulator...'
+adb shell am start -n ${PACKAGE}/.MainActivity

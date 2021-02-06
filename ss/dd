@@ -1,0 +1,7 @@
+#/usr/bash
+
+#PACKAGE=`cat PACKAGE.txt`
+PACKAGE=`./pp`
+
+echo ' => uninstall the app if it exists...'
+adb uninstall ${PACKAGE}

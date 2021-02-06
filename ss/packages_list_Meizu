@@ -1,0 +1,4 @@
+#/usr/bash
+
+#adb shell 'pm list packages -f | grep maix'
+adb -s U10HFCPM222X2 shell 'pm list packages | grep example'

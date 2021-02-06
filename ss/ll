@@ -1,0 +1,4 @@
+#/usr/bash
+
+echo ' => ls device / emulator root...'
+adb shell ls -la /

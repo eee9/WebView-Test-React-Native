@@ -1,0 +1,16 @@
+#/usr/bash
+
+echo "Compress the current subdirectory (tar.gz)..."
+cdir=`pwd`
+echo "cdir ==> [$cdir]"
+cpwd=`basename $cdir`
+echo "Name of the compressed file (without extension):"
+echo "cpwd ==> [$cpwd]"
+
+ctar=$cpwd
+[ "$ctar"x = x ] && ctar="$cpwd"
+echo "ctar ==> [$ctar]"
+
+cd .. && \
+tar cf - "$ctar" | gzip -f9 > "$ctar.tar.gz" && \
+echo "../$ctar.tar.gz created."

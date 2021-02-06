@@ -1,0 +1,13 @@
+adb uninstall com.example.jtstkbb
+adb uninstall com.example.jtstkbj
+adb uninstall com.example.jtstkbl
+adb uninstall com.js_rnntst_k5t
+adb uninstall com.js_tst2
+adb uninstall com.ts_rnntst_k63
+adb uninstall com.tstestk5h
+adb uninstall com.tstjskan
+adb uninstall com.tstjskas
+adb uninstall com.tstjskbb
+adb uninstall com.tstkaf
+adb uninstall com.tstkag
+adb uninstall com.tststk4p

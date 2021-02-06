@@ -1,0 +1,5 @@
+#/usr/bash
+
+emulator @Pixel_XL_API_21 &
+
+exit

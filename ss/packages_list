@@ -1,0 +1,3 @@
+#/usr/bash
+
+adb shell 'pm list packages -f | grep maix'

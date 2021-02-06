@@ -1,0 +1,21 @@
+#/usr/bash
+
+#PACKAGE=`cat PACKAGE.txt`
+PACKAGE=`./pp`
+
+echo PACKAGE: \"$PACKAGE\"
+
+cd ../android
+
+echo ' => build debug apks...'
+./gradlew assembleDebug
+echo 'gradlew DONE.'
+
+echo ' => uninstall the app if it exists...'
+adb uninstall ${PACKAGE}
+
+echo ' => install debug apk on device...'
+adb -d install ./app/build/outputs/apk/debug/app-armeabi-v7a-debug.apk
+
+echo ' => run the app on device...'
+adb shell am start -n ${PACKAGE}/.MainActivity

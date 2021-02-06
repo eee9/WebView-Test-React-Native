@@ -1,0 +1,22 @@
+#/usr/bash
+
+#PACKAGE=`cat PACKAGE.txt`
+PACKAGE=`./pp`
+
+echo PACKAGE: \"$PACKAGE\"
+
+cd ../android
+
+echo ' => build RELEASE apks...'
+./gradlew assembleRelease
+echo 'gradlew DONE.'
+
+echo ' => uninstall the app if it exists...'
+adb uninstall ${PACKAGE}
+
+echo ' => install the x86 apk on emulator...'
+#adb -e install ./app/build/outputs/apk/release/app-armeabi-v7a-release.apk
+adb -e install ./app/build/outputs/apk/release/app-x86-release.apk
+
+echo ' => run the app on emulator...'
+adb shell am start -n ${PACKAGE}/.MainActivity

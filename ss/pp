@@ -1,0 +1,8 @@
+#/usr/bash
+
+#ls -la ../android/app/src/main
+LINE=`cat ../android/app/src/main/AndroidManifest.xml | grep package`
+#echo ' => LINE:' {$LINE}
+RES=`echo $LINE | sed s/^[^\"]*\"// | sed s/\".*$//`
+#echo ' => RES:' [$RES]
+echo $RES

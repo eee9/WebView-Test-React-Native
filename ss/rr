@@ -1,0 +1,8 @@
+#/usr/bash
+
+PACKAGE=`./pp`
+
+echo PACKAGE: \"$PACKAGE\"
+
+echo ' => run the app on device...'
+adb shell am start -n ${PACKAGE}/.MainActivity

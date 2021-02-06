@@ -1,0 +1,7 @@
+#/usr/bash
+
+PACKAGE1=`cat PACKAGE.txt`
+PACKAGE2=`./pp`
+
+echo '=> Test1. PACKAGE1:' \"$PACKAGE1\"
+echo '=> Test2. PACKAGE2:' \"$PACKAGE2\"

@@ -1,0 +1,8 @@
+#/usr/bash
+
+x-terminal-emulator -e "yarn start"
+
+#react-native run-android
+yarn android
+
+exit

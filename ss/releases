@@ -1,0 +1,7 @@
+#/usr/bash
+
+cd ../android
+
+echo ' => build release apks...'
+./gradlew assembleRelease
+echo 'gradlew DONE.'  

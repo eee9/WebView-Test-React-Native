@@ -1,0 +1,10 @@
+#/usr/bash
+
+cd ../android
+
+echo ' => build release apk files...'
+./gradlew assembleRelease
+echo 'gradlew DONE.'
+
+echo ' => copy apk files to xMx/release...'
+cp ./app/build/outputs/apk/release/*.apk /home/maick/xMx/release
